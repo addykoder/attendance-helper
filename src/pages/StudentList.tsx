@@ -64,7 +64,7 @@ export default function StudentList() {
 			<div className='border rounded border-white/60'>
 				<table className='m-auto w-full'>
 					<tbody>
-						{students.map(s => (
+						{students.sort((s1, s2) => s1.roll - s2.roll).map(s => (
 							<tr key={s.key} className='border-b border-white/60 last:border-none hover:bg-sky-700 hover:bg-opacity-20' onClick={() => {
 								// setting up the variables for modal
 								setActiveModalName(students.filter(x => x.key === s.key)[0].name)

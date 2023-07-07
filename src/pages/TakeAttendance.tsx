@@ -21,7 +21,7 @@ export default function TakeAttendance() {
 			<div className='border rounded border-white/60'>
 				<table className='m-auto w-full'>
 					<tbody>
-						{students.map(s => (
+						{students.sort((s1, s2) => s1.roll - s2.roll).map(s => (
 							<tr
 								key={s.key}
 								className={ `border-b border-white/60 last:border-none ${attendance.map(s => s.key).includes(s.key)?'bg-sky-500/60':''}` }
