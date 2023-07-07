@@ -1,15 +1,34 @@
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from '../helper/useLocalStorage';
 import { studentsType } from '../helper/types';
+import { useRef } from 'react';
+import { toJpeg } from 'html-to-image';
 
 export default function Attendance() {
 	const navigate = useNavigate();
-
 	const [attendance] = useLocalStorage<studentsType>('attendance', []);
+	const printRef = useRef<HTMLInputElement>(null)
+
+	const downloadHandler = async () => {
+		toJpeg(printRef.current as HTMLElement, { quality: 0.95 })
+  .then(function (dataUrl) {
+    const link = document.createElement('a');
+    link.download = 'my-image-name.jpeg';
+    link.href = dataUrl;
+    link.click();
+	});
+	}
 
 	return (
 		<>
-			<div className='printable select-none'>
+			<button className='text-sky-500 px-2 py-2 bg-sky-700 bg-opacity-10 w-full mt-6 mb-3' onClick={downloadHandler}>
+				Download as Image
+			</button>
+
+			<div ref={printRef} className='printable select-none p-2'>
+
+			<div className='w-40 h-40 absolute bg-sky-500 left-10 top-40  blur-[120px] -z-10'></div>
+			<div className='w-40 h-40 absolute bg-pink-500 top-20 right-8 blur-[100px] -z-10'></div>
 				<div className="header flex items-center justify-between">
 					<h3 className='text-xl my-6'>Absent Students</h3>
 					<span className='text-xl'><span className='opacity-40'>@ </span>{new Date().toLocaleDateString('en-IN')}</span>
@@ -18,7 +37,7 @@ export default function Attendance() {
 				<div className='border rounded border-white/60'>
 					<table className='m-auto w-full'>
 							<thead className='border-b'>
-								<th>Roll No.</th>
+								<th>R.n.</th>
 								<th className='text-left pl-4 py-2'>Name</th>
 							</thead>
 						<tbody>
@@ -42,7 +61,8 @@ export default function Attendance() {
 
 			</div>
 
-			<button className='text-sky-500 border-spacing-2 px-2 py-2 border rounded border-sky-500 bg-sky-700 bg-opacity-10 w-full my-6' onClick={() => navigate('/take-attendance')}>
+
+			<button className='text-sky-500 border-spacing-2 px-2 py-2 border rounded border-sky-500 bg-sky-700 bg-opacity-10 w-full mb-6' onClick={() => navigate('/take-attendance')}>
 				Take Attendance
 			</button>
 		</>
