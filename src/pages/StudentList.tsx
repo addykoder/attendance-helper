@@ -38,25 +38,6 @@ export default function StudentList() {
 
 	}
 
-	// const studentss = [
-	// 	{ name: 'Aditya tripathi', key:1, roll: 1 },
-	// 	{ name: 'Aditya tripathi', key:2, roll: 2 },
-	// 	{ name: 'Aditya tripathi', key:3, roll: 3 },
-	// 	{ name: 'Aditya tripathi', key:4, roll: 4 },
-	// 	{ name: 'Aditya tripathi', key:5, roll: 5 },
-	// 	{ name: 'Aditya tripathi', key:6, roll: 6 },
-	// 	{ name: 'Aditya tripathi', key:7, roll: 7 },
-	// 	{ name: 'Aditya tripathi', key:8, roll: 8 },
-	// 	{ name: 'Aditya tripathi', key:9, roll: 9 },
-	// 	{ name: 'Aditya tripathi', key:10, roll: 10 },
-	// 	{ name: 'Aditya tripathi', key:11, roll: 11 },
-	// 	{ name: 'Aditya tripathi', key:12, roll: 12 },
-	// 	{ name: 'Aditya tripathi', key:13, roll: 13 },
-	// 	{ name: 'Aditya tripathi', key:14, roll: 14 },
-	// 	{ name: 'Aditya tripathi', key:15, roll: 15 },
-	// 	{ name: 'Aditya tripathi', key:16, roll: 16 },
-	// ];
-
 	return (
 		<>
 			<h1 className='text-2xl mt-4'>Students</h1>
