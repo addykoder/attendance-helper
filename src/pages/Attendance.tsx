@@ -9,10 +9,10 @@ export default function Attendance() {
 
 	return (
 		<>
-			<div className='printable'>
+			<div className='printable select-none'>
 				<div className="header flex items-center justify-between">
 					<h3 className='text-xl my-6'>Absent Students</h3>
-					<span className='text-xl'><span className='opacity-40'>@</span>{new Date().toLocaleDateString('en-IN')}</span>
+					<span className='text-xl'><span className='opacity-40'>@ </span>{new Date().toLocaleDateString('en-IN')}</span>
 				</div>
 
 				<div className='border rounded border-white/60'>
