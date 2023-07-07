@@ -1,5 +1,5 @@
 
-interface studentsObject{
+export interface studentsObject{
 	name: string;
 	roll: number
 }
