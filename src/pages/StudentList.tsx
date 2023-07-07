@@ -17,7 +17,7 @@ export default function StudentList() {
 	const [addStudentName, setAddStudentName] = useState('')
 	const [addStudentRoll, setAddStudentRoll] = useState<number>(0)
 
-	const onDoneModalEdit = ()=>{
+	const onSaveModalEdit = ()=>{
 		setStudents(students.map(s => s.key === activeStudent? {...s, name:activeModalName, roll:activeModalRoll }:s ))
 		setActiveStudent(0)
 		setModalActive(false)
@@ -107,7 +107,7 @@ export default function StudentList() {
 
 				<input value={activeModalName} className='focus:outline-none border-spacing-2 px-2 py-2 border rounded border-sky-500 bg-sky-700 bg-opacity-10 w-full' type='text' placeholder='Name' onChange={e=> setActiveModalName(e.target.value)} />
 				<input value={activeModalRoll} className='focus:outline-none border-spacing-2 px-2 py-2 border rounded border-sky-500 bg-sky-700 bg-opacity-10 w-full mt-2' type='number' placeholder='Roll Number' onChange={e => setActiveModalRoll(Number(e.target.value))} />
-				<button className='w-full py-2 bg-sky-600 rounded mt-3' onClick={onDoneModalEdit}>Done</button>
+				<button className='w-full py-2 bg-sky-600 rounded mt-3' onClick={onSaveModalEdit}>Save</button>
 			</Modal>
 		</>
 	);
