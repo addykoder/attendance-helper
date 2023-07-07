@@ -1,0 +1,13 @@
+
+
+.react-responsive-modal-modal {
+  background: #060d1d2a;
+	border-radius: 5px;
+	backdrop-filter: blur(6px);
+	padding: 2rem 1rem;
+	overflow: hidden;
+}
+
+.react-responsive-modal-closeButton{
+	display:none;	
+}

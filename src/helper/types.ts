@@ -1,7 +1,8 @@
 
 export interface studentsObject{
 	name: string;
-	roll: number
+	roll: number;
+	key:number
 }
 
 

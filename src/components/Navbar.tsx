@@ -21,7 +21,7 @@ export default function Navbar() {
 				<Outlet />
 			</div>
 
-			<div className="flex justify-center">
+			<div className="flex justify-center mb-6">
 			<div className='opacity-70 text-sm bg-sky-900 bg-opacity-60 rounded mx-4 px-4 py-2 m-auto max-w-sm text-center mt-20'>
 				<span className='opacity-70'>Developed and Maintained by {' '}</span>
 				<a className='text-sky-500 no-underline border-b-2 border-dotted border-sky-500' href='https://adityatripathi.com'>Aditya Tripathi</a>
