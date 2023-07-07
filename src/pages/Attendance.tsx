@@ -25,7 +25,7 @@ export default function Attendance() {
 				Download as Image
 			</button>
 
-			<div ref={printRef} className='printable select-none p-2'>
+			<div ref={printRef} className='printable select-none p-2 scale-75'>
 
 			<div className='w-40 h-40 absolute bg-sky-500 left-10 top-40  blur-[120px] -z-10'></div>
 			<div className='w-40 h-40 absolute bg-pink-500 top-20 right-8 blur-[100px] -z-10'></div>
