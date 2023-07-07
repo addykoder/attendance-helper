@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+	"homepage": "https://adityanative.github.io/attendance-helper/",
   "scripts": {
     "start": "vite",
     "build": "rimraf docs && tsc && vite build",
