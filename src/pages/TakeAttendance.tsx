@@ -9,6 +9,9 @@ export default function TakeAttendance() {
 	const [, saveAttendance] = useLocalStorage<studentsType>('attendance', []);
 	const navigate = useNavigate()
 
+	const [classN, setClass] = useLocalStorage<string>('class', '')
+	const [takenBy, setTakenBy] = useLocalStorage<string>('takenBy', '')
+
 	const submitHandler = () => {
 		saveAttendance(attendance)
 		navigate('/')
@@ -40,7 +43,10 @@ export default function TakeAttendance() {
 						))}
 					</tbody>
 				</table>
+
 			</div>
+				<input className='my-2 focus:outline-none border-spacing-2 px-2 py-2 border rounded border-sky-500 bg-sky-700 bg-opacity-10 w-full' type="text" placeholder='Class' value={classN} onChange={e => setClass(e.target.value)} />
+				<input className='focus:outline-none border-spacing-2 px-2 py-2 border rounded border-sky-500 bg-sky-700 bg-opacity-10 w-full' type="text" placeholder='Taken by' value={takenBy} onChange = {e => setTakenBy(e.target.value)} />
 
 				<button className='w-full py-1 bg-sky-600 rounded my-3' onClick={submitHandler} >Submit</button>
 		</>
