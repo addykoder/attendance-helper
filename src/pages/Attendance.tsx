@@ -12,7 +12,7 @@ export default function Attendance() {
 	const [takenBy] = useLocalStorage<string>('takenBy','')
 
 	const downloadHandler = async () => {
-		toJpeg(printRef.current as HTMLElement, { quality: 0.95 })
+		toJpeg(printRef.current as HTMLElement, { quality: 1, pixelRatio: 3 })
   .then(function (dataUrl) {
     const link = document.createElement('a');
     link.download = 'my-image-name.jpeg';
